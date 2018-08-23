@@ -11,7 +11,7 @@ import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
 
-class Methods extends properties {
+class Methods extends vars {
 
     Map<String, Object> fakeJSON() {
 
@@ -31,6 +31,7 @@ class Methods extends properties {
 
     JSONObject sendRequest(String url) throws IOException, JSONException {
         JSONObject responseJSON = new JSONObject();
+        System.out.println("Sending request to " + url);
         try {
             URL obj = new URL(url);
             HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -63,6 +64,7 @@ class Methods extends properties {
 
             checkErrorMessageFromJSON(responseJSON);
         } catch (UnknownHostException e) {
+            System.out.println("Running test with fake json, couse of Unknown host.");
             checkErrorMessageFromFakeJSON();
         }
         return responseJSON;

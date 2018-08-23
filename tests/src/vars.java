@@ -1,4 +1,4 @@
-public class properties {
+public class vars {
     String login = "hello@world.com";
     String password = "12345678";
     String mainUrl = "http://instatestvx.me/";
